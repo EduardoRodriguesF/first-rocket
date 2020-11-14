@@ -1,7 +1,5 @@
 import React from 'react';
 
-import { Container } from './styles';
-
 import Input from '../../components/Input';
 import Button from '../../components/Button';
 
