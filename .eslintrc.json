@@ -40,7 +40,9 @@
             "ignorePackages",
             {
               "ts": "never",
-              "tsx": "never"
+              "tsx": "never",
+              "js": "never",
+              "jsx": "never"
             }
         ]
     },

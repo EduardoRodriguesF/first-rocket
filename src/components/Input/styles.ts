@@ -6,7 +6,7 @@ interface ContainerProps {
 
 export const Container = styled.div<ContainerProps>`
   display: flex;
-  max-width: 730px;
+  width: 100%;
   padding: 14px;
   border: 2px solid #fff;
   border-radius: 100px;
@@ -26,6 +26,7 @@ export const Container = styled.div<ContainerProps>`
     flex: 1;
     border: none;
     background: transparent;
+    color: #1e1c24d9;
   }
 
   input[type='number']::-webkit-inner-spin-button,
