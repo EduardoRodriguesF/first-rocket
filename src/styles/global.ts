@@ -16,6 +16,14 @@ export default createGlobalStyle`
     font-size: 16px;
   }
 
+  body, button {
+    font-family: 'Poppins', sans-serif;
+  }
+
+  input { 
+    font-family: 'Montserrat', sans-serif;
+  }
+
   button { 
     cursor: pointer;
   }
