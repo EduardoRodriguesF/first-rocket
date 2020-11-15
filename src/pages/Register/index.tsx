@@ -54,6 +54,7 @@ const Register: React.FC = props => {
         nomeCompleto: data.name,
         cpf: data.cpf,
         email: data.email,
+        senha: data.password,
       });
 
       history.push('/dashboard');

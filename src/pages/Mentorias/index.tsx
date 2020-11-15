@@ -1,15 +1,26 @@
-import React from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import { FiUser } from 'react-icons/fi';
 import { GoPlus } from 'react-icons/go';
 
 import logoImg from '../../assets/logo.svg';
 
+import api from '../../services/api';
+
 import { Container, Content, Header } from './styles';
 
+interface Mentors {
+  id: number;
+  nomeCompleto: string;
+  sobre: string;
+  horarios: string;
+}
+
 const Mentorias: React.FC = () => {
+  const [mentors, setMentors] = useState<Mentors[]>([]);
+
   // Variável para testes
-  const mentors = [
+  const tMentors = [
     {
       name: 'Jane Doe',
       about: 'Especialista em negócios digitais',
@@ -32,6 +43,16 @@ const Mentorias: React.FC = () => {
     },
   ];
 
+  const getMentors = useCallback(async () => {
+    await api.get('mentores').then(response => {
+      setMentors(response.data);
+    });
+  }, []);
+
+  useEffect(() => {
+    getMentors();
+  }, []);
+
   return (
     <Container>
       <Header>
@@ -47,12 +68,12 @@ const Mentorias: React.FC = () => {
                 <FiUser size={30} />
               </div>
               <div className="info">
-                <h2>{mentor.name}</h2>
-                <h3>{mentor.about}</h3>
+                <h2>{mentor.nomeCompleto}</h2>
+                <p>{mentor.sobre}</p>
               </div>
             </div>
             <div className="schedule">
-              {mentor.schedule.map(time => (
+              {mentor.horarios.split(',').map(time => (
                 <div className="time">
                   <p>{time}</p>
                   <button type="button">

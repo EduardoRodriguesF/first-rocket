@@ -95,9 +95,6 @@ export const Content = styled.div`
         h2 {
           font-size: 18px;
         }
-        h3 {
-          font-size: 14px;
-        }
       }
     }
   }
