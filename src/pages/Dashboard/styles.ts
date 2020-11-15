@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { shade } from 'polished';
 
 import waveImg from '../../assets/wave.svg';
+import bubblesImg from '../../assets/bubbles.svg';
 
 export const Container = styled.div`
   display: flex;
@@ -112,6 +113,7 @@ export const Mentoring = styled.div`
   align-items: center;
   margin-top: 82px;
   width: 100%;
+  background: url(${bubblesImg}) no-repeat;
 
   .status {
     margin-top: 24px;
@@ -128,6 +130,7 @@ export const Mentoring = styled.div`
 
   .lock {
     margin-top: 64px;
+    margin-bottom: 64px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -136,6 +139,28 @@ export const Mentoring = styled.div`
     color: #fff;
     background: #a440fc;
     border-radius: 50%;
+  }
+
+  .schedule {
+    margin-top: 64px;
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+
+    > div {
+      flex: 1 1 500px;
+      margin: 12px;
+
+      @media (max-width: 800px) {
+        & + div {
+          margin: 0;
+          margin-top: 12px;
+        }
+      }
+    }
   }
 `;
 

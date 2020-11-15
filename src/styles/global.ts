@@ -12,6 +12,10 @@ export default createGlobalStyle`
     -webkit-font-smoothing: antialiased;
   }
 
+  body, html {
+    overflow-x: hidden;
+  }
+
   body, input, button {
     font-size: 16px;
   }

@@ -13,6 +13,7 @@ import {
 import Button from '../../components/Button';
 
 import ClassCard from '../../components/ClassCard';
+import ScheduleCard from '../../components/ScheduleCard';
 
 import logoImg from '../../assets/logo.svg';
 
@@ -73,8 +74,17 @@ const Dashboard: React.FC = () => {
           <div className="lock">
             <FiUnlock size={35} />
           </div>
+          <Button>marcar mentoria</Button>
           <div className="schedule">
-            <Button>marcar mentoria</Button>
+            <ScheduleCard
+              name="Jane Doe"
+              time="12/12 às 16h"
+              link="https://meet.google.com/dtf-adru-dcm"
+            />
+            <ScheduleCard name="Eduardo Rodrigues" time="12/12 às 16h" />
+            <ScheduleCard name="Amanda Zanatta" time="12/12 às 16h" />
+            <ScheduleCard name="Lucca Dias" time="12/12 às 16h" />
+            <ScheduleCard name="Amanda Zanatta" time="12/12 às 16h" />
           </div>
         </Mentoring>
       </Content>
