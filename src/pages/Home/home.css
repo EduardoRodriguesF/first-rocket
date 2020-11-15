@@ -1,50 +1,13 @@
 .header {
+  align-items: center;
   display: flex;
   justify-content: flex-end;
-  align-items: center;
   padding: 0;
 }
 
 .cadastre {
   height: 64px;
-  margin: 30px 50px 0 0;
-}
-
-.title {
-  top: 501px;
-  left: 295px;
-  width: 1446px;
-  height: 205px;
-  text-align: center;
-  font: normal normal 900 70px/97px Poppins;
-  letter-spacing: -0.49px;
-  color: #1E1C24;
-  opacity: 1;
-}
-
-.subtitle {
-  top: 786px;
-  left: 504px;
-  width: 962px;
-  height: 116px;
-  text-align: center;
-  font: normal normal bold 20px/35px Muli;
-  letter-spacing: 0px;
-  color: #000000;
-  opacity: 1;
-}
-
-.input {
-  top: 981px;
-  left: 626px;
-  width: 736px;
-  height: 77px;
-  background: #FFFFFF 0% 0% no-repeat padding-box;
-  box-shadow: 0px 0px 6px #00000061;
-  border-radius: 100px;
-  opacity: 1;
-  margin:10px;
-  padding:30px
+  margin: 10% 15% 0 0;
 }
 
 .centerBuddy {
@@ -54,8 +17,42 @@
   justify-content: center;
 }
 
+.title {
+  width: 90%;
+  text-align: center;
+  font: 900 4.5vw/5vw Poppins;
+  letter-spacing: -0.49px;
+  color: #1E1C24;
+  opacity: 1;
+  margin: 1%;
+}
+
+.subtitle {
+  width: 70%;
+  text-align: center;
+  font: bold 1.3vw/2vw Muli;
+  letter-spacing: 0px;
+  color: #000000;
+  opacity: 1;
+  margin: 1% 0 2%;
+}
+
+.input {
+  width: 45%;
+  background: #FFFFFF 0% 0% no-repeat padding-box;
+  box-shadow: 0px 0px 6px #00000061;
+  border-radius: 100px;
+  opacity: 1;
+  margin: 0.5%;
+  padding:30px;
+  flex: 1;
+  border: none;
+  background: transparent;
+  color: #1e1c24d9;
+}
+
 .login {
-  margin: 60px 0 80px;
+  margin: 15% 0 25%;
 }
 
 .endbuddy {
@@ -67,12 +64,9 @@
 }
 
 .prepare {
-  top: 1588px;
-  left: 385px;
-  width: 1151px;
-  height: 132px;
+  width: 70%;
   text-align: center;
-  font: normal normal bold 50px/60px Poppins;
+  font: normal normal bold 3vw/4vw Poppins;
   letter-spacing: 0px;
   color: #A440FC;
   opacity: 1;
@@ -83,6 +77,7 @@
   align-items: center;
   display: flex;
   justify-content: center;
+  width: 100%;
 }
 
 .plataformaInterativa {
@@ -90,33 +85,34 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 364px;
+  width: 24%;
   height: 364px;
   background: #01F0B1 0% 0% no-repeat padding-box;
   border-radius: 11px;
   opacity: 1;
-  margin: 30px;
+  margin: 2%;
 }
 
 .plataformaInterativaTitle {
-  width: 180px;
-  height: 90px;
+  width: 70%;
+  height: 25%;
   text-align: center;
-  font: normal normal 800 30px/40px Poppins;
+  font: normal normal 800 2vw/2.5vw Poppins;
   letter-spacing: 0px;
   color: #616064;
   opacity: 1;
-  margin: 20px;
+  margin: 4%;
+  max-width: 70%;
 }
 
 .plataformaInterativaText {
-  width: 250px;
-  height: 90px;
+  width: 70vw;
   text-align: center;
-  font: normal normal bold 18px/26px Muli;
+  font: normal normal bold 1.1vw/1.6vw Muli;
   letter-spacing: 0px;
   color: #616064;
   opacity: 1;
+  max-width: 70%;
 }
 
 .aguardeOMatch {
@@ -124,33 +120,34 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 364px;
+  width: 24%;
   height: 364px;
   background: #A440FC 0% 0% no-repeat padding-box;
   border-radius: 11px;
   opacity: 1;
-  margin: 30px;
+  margin: 2%;
 }
 
 .aguardeOMatchTitle {
-  width: 180px;
-  height: 90px;
+  width: 70vw;
+  height: 25%;
   text-align: center;
-  font: normal normal 800 30px/40px Poppins;
+  font: normal normal 800 2vw/2.5vw Poppins;
   letter-spacing: 0px;
   color: #FFFFFF;
   opacity: 1;
-  margin: 20px;
+  margin: 4%;
+  max-width: 70%;
 }
 
 .aguardeOMatchText {
-  width: 250px;
-  height: 90px;
+  width: 70vw;
   text-align: center;
-  font: normal normal bold 16px/26px Muli;
+  font: normal normal bold 1.1vw/1.6vw Muli;
   letter-spacing: 0px;
   color: #FFFFFF;
   opacity: 1;
+  max-width: 70%;
 }
 
 .mentorias {
@@ -158,35 +155,36 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 364px;
+  width: 25%;
   height: 364px;
   background: #FAEC21 0% 0% no-repeat padding-box;
   border-radius: 11px;
   opacity: 1;
-  margin: 30px;
+  margin: 2%;
 }
 
 .mentoriasTitle {
-  width: 240px;
-  height: 90px;
+  width: 70vw;
+  height: 25%;
   text-align: center;
-  font: normal normal 800 30px/40px Poppins;
+  font: normal normal 800 2vw/2.5vw Poppins;
   letter-spacing: 0px;
   color: #1E1C24;
   opacity: 1;
-  margin: 20px;
+  margin: 4%;
+  max-width: 70%;
 }
 
 .mentoriasText {
-  width: 310px;
-  height: 90px;
+  width: 70vw;
   text-align: center;
-  font: normal normal bold 16px/26px Muli;
+  font: normal normal bold 1.1vw/1.6vw Muli;
   letter-spacing: 0px;
   color: #1E1C24;
   opacity: 1;
+  max-width: 70%;
 }
 
 .comece {
-  margin: 80px;
+  margin: 30% 0;
 }

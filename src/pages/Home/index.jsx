@@ -13,8 +13,13 @@ export default function Home() {
           </Link>
         </div>
         <div className="centerBuddy">
+          <img
+            className="imgLogo"
+            src="../../image/logo.svg"
+            alt="Logo First Rocket"
+          />
           <h1 className="title">
-            Ajudamos você nos primeiros passos em sua jornada empreendedora
+            Ajudamos você nos primeiros passos em sua jornada empreendedora.
           </h1>
           <p className="subtitle">
             Começar pode ser a parte mais difícil quando se pensa em empreender.
