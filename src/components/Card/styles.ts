@@ -7,6 +7,8 @@ export const Container = styled.a`
   background: #01f0b1;
   border-radius: 12px;
   padding: 24px;
+  color: #333;
+  text-decoration: none;
 
   div {
     width: 50%;
@@ -17,7 +19,7 @@ export const Container = styled.a`
     align-items: center;
 
     img {
-      border-radius: 5px;
+      border-radius: 50%;
       width: 100%;
     }
   }
@@ -26,12 +28,10 @@ export const Container = styled.a`
 export const Content = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   margin-left: 24px;
 
   p {
-    margin-top: 48px;
-    font-size: 24px;
+    font-size: 16px;
 
     span {
       font-size: 48px;

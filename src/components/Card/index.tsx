@@ -4,24 +4,22 @@ import { Container, Content } from './styles';
 import thumbImage from '../../assets/thumb.png';
 
 interface CardProps {
-  title: string;
-  progress: string;
+  mentor: string;
+  description: string;
 }
 
-const ClassCard: React.FC<CardProps> = ({ title, progress }) => {
+const Card: React.FC<CardProps> = ({ mentor, description }) => {
   return (
-    <Container>
+    <Container href="/">
       <div className="thumb">
         <img src={thumbImage} alt="thumb" />
       </div>
       <Content>
-        <h2>{title}</h2>
-        <p>
-          <span>{progress}%</span> Concluído
-        </p>
+        <h2>{mentor}</h2>
+        <p>{description}</p>
       </Content>
     </Container>
   );
 };
 
-export default ClassCard;
+export default Card;
