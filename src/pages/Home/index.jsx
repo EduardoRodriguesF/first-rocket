@@ -1,6 +1,5 @@
-/* eslint-disable react/jsx-filename-extension */
 import React from 'react';
-import { Redirect } from 'react-router';
+import { Link } from 'react-router-dom';
 import Button from '../../components/Button';
 import './home.css';
 
@@ -9,8 +8,9 @@ export default function Home() {
     <div>
       <div>
         <div className="header">
-          <Button className="cadastre">CADASTRE-SE</Button>
-          <p className="sair">SAIR</p>
+          <Link to="/register">
+            <Button className="cadastre">CADASTRE-SE</Button>
+          </Link>
         </div>
         <div className="centerBuddy">
           <h1 className="title">
@@ -24,7 +24,9 @@ export default function Home() {
           </p>
           <input placeholder="E-mail" className="input" />
           <input placeholder="Senha" className="input" />
-          <Button className="login">LOGIN</Button>
+          <Link to="/login">
+            <Button className="login">LOGIN</Button>
+          </Link>
         </div>
       </div>
       <div className="endbuddy">
@@ -54,7 +56,9 @@ export default function Home() {
             </h4>
           </div>
         </div>
-        <Button>COMECE JÁ!</Button>
+        <Link to="/register">
+          <Button className="comece">COMECE JÁ!</Button>
+        </Link>
       </div>
     </div>
   );

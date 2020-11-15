@@ -5,15 +5,24 @@ import * as Yup from 'yup';
 
 import getValidationErrors from '../../utils/getValidationErrors';
 
+import api from '../../services/api';
+
 import { Container } from './styles';
 
 import Input from '../../components/Input';
 import Button from '../../components/Button';
 
-const Register: React.FC = () => {
+interface User {
+  name: string;
+  cpf: string;
+  email: string;
+  password: string;
+}
+
+const Register: React.FC = props => {
   const formRef = useRef<FormHandles>(null);
 
-  const handleSubmit = useCallback(async (data: object) => {
+  const handleSubmit = useCallback(async (data: User) => {
     try {
       formRef.current?.setErrors({});
 
@@ -35,6 +44,12 @@ const Register: React.FC = () => {
 
       await schema.validate(data, {
         abortEarly: false,
+      });
+
+      await api.post('mentorado', {
+        nomeCompleto: data.name,
+        cpf: data.cpf,
+        email: data.email,
       });
     } catch (err) {
       const errors = getValidationErrors(err);
