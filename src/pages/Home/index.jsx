@@ -1,9 +1,42 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useRef } from 'react';
+import { useHistory, Link } from 'react-router-dom';
+import { FormHandles } from '@unform/core';
+import { Form } from '@unform/web';
+import * as Yup from 'yup';
 import Button from '../../components/Button';
-import './home.css';
+import Input from '../../components/Input';
+import ImgLogo from '../../assets/logo.svg';
+import './styles.css';
+
+import getValidationErrors from '../../utils/getValidationErrors';
 
 export default function Home() {
+  const formRef = useRef(null);
+  const history = useHistory();
+
+  const handleSubmit = async data => {
+    try {
+      formRef.current?.setErrors({});
+
+      const schema = Yup.object().shape({
+        email: Yup.string()
+          .email('E-mail inválido')
+          .required('E-mail obrigatório'),
+        password: Yup.string().required('Senha obrigatória'),
+      });
+
+      await schema.validate(data, {
+        abortEarly: false,
+      });
+
+      history.push('/dashboard');
+    } catch (err) {
+      const errors = getValidationErrors(err);
+
+      formRef.current?.setErrors(errors);
+    }
+  };
+
   return (
     <div>
       <div>
@@ -13,11 +46,7 @@ export default function Home() {
           </Link>
         </div>
         <div className="centerBuddy">
-          <img
-            className="imgLogo"
-            src="../../image/logo.svg"
-            alt="Logo First Rocket"
-          />
+          <img className="imgLogo" src={ImgLogo} alt="First Rocket" />
           <h1 className="title">
             Ajudamos você nos primeiros passos em sua jornada empreendedora.
           </h1>
@@ -27,11 +56,18 @@ export default function Home() {
             mentorias, acompanhamento personalizado e tudo mais oque precisar
             para tirar sua ideia do papel!
           </p>
-          <input placeholder="E-mail" className="input" />
-          <input placeholder="Senha" className="input" />
-          <Link to="/login">
-            <Button className="login">LOGIN</Button>
-          </Link>
+          <Form ref={formRef} onSubmit={handleSubmit}>
+            <Input placeholder="E-mail" name="email" className="input" />
+            <Input
+              placeholder="Senha"
+              name="password"
+              type="password"
+              className="input"
+            />
+            <Button type="submit" className="login">
+              login
+            </Button>
+          </Form>
         </div>
       </div>
       <div className="endbuddy">

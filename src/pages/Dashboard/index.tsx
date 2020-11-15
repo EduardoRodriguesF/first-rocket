@@ -62,6 +62,7 @@ const Dashboard: React.FC = () => {
         <Slider>
           {courses.map(course => (
             <ClassCard
+              key={course.link}
               title={course.title}
               conclusion={course.conclusion}
               link={course.link}
@@ -74,7 +75,9 @@ const Dashboard: React.FC = () => {
           <div className="lock">
             <FiUnlock size={35} />
           </div>
-          <Button>marcar mentoria</Button>
+          <Link to="/mentorias">
+            <Button>marcar mentoria</Button>
+          </Link>
           <div className="schedule">
             <ScheduleCard
               name="Jane Doe"
