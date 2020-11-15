@@ -21,4 +21,19 @@ export const Container = styled.div`
       margin-top: 24px;
     }
   }
+
+  img {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+  }
+
+  @media (max-width: 768px) {
+    margin-top: 52px;
+    img {
+      width: 50%;
+      left: auto;
+      margin: auto;
+    }
+  }
 `;

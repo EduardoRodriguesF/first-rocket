@@ -1,15 +1,18 @@
 /* eslint-disable react/jsx-curly-newline */
 import React from 'react';
 
-import { Switch, Route, Redirect } from 'react-router-dom';
+import { Switch, Route, Redirect, RouteProps } from 'react-router-dom';
 
 import Home from '../pages/Home/index';
 import Register from '../pages/Register';
 import Dashboard from '../pages/Dashboard';
-        
+
 import { isAuthenticated } from '../services/auth';
 
-const PrivateRoute = ({ component: Component, ...rest }) => (
+const PrivateRoute = ({
+  component: Component,
+  ...rest
+}) => (
   <Route
     {...rest}
     render={props =>
@@ -22,11 +25,11 @@ const PrivateRoute = ({ component: Component, ...rest }) => (
   />
 );
 
-const Routes: React.FC = () => (
+const Routes = () => (
   <Switch>
     <Route path="/" exact component={Home} />
     <Route path="/register" component={Register} />
-    <PrivateRoute path="/dashboard" component={Dashboard} />
+    <Route path="/dashboard" component={Dashboard} />
   </Switch>
 );
 

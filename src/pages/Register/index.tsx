@@ -1,7 +1,10 @@
 import React, { useCallback, useRef } from 'react';
+import { useHistory } from 'react-router-dom';
 import { FormHandles } from '@unform/core';
 import { Form } from '@unform/web';
 import * as Yup from 'yup';
+
+import logoImg from '../../assets/logo.svg';
 
 import getValidationErrors from '../../utils/getValidationErrors';
 
@@ -21,6 +24,7 @@ interface User {
 
 const Register: React.FC = props => {
   const formRef = useRef<FormHandles>(null);
+  const history = useHistory();
 
   const handleSubmit = useCallback(async (data: User) => {
     try {
@@ -51,6 +55,8 @@ const Register: React.FC = props => {
         cpf: data.cpf,
         email: data.email,
       });
+
+      history.push('/dashboard');
     } catch (err) {
       const errors = getValidationErrors(err);
 
@@ -60,7 +66,7 @@ const Register: React.FC = props => {
 
   return (
     <Container>
-      <div className="background" />
+      <img src={logoImg} alt="First Rocket" />
       <Form ref={formRef} onSubmit={handleSubmit}>
         <Input name="name" placeholder="Nome completo" />
         <Input name="cpf" placeholder="CPF" />
