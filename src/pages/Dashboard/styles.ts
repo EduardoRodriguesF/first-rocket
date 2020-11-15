@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 import { shade } from 'polished';
 
+import waveImg from '../../assets/wave.svg';
+
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -79,4 +81,16 @@ export const Slider = styled.div`
   ::-webkit-scrollbar-thumb:hover {
     background: ${shade(0.05, '#01f0b1')};
   }
+`;
+
+export const Background = styled.div`
+  position: absolute;
+  z-index: -100;
+  top: -60px;
+  right: -50px;
+
+  width: 700px;
+  height: 700px;
+  background: url(${waveImg}) no-repeat;
+  transform: rotate(-90deg);
 `;

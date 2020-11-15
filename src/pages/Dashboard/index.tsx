@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import { Container, Header, Content, Slider } from './styles';
+import { Container, Header, Content, Background } from './styles';
 
 import Card from '../../components/Card';
 
-import logoImg from '../../assets/logo.png';
+import logoImg from '../../assets/logo.svg';
 
 const Dashboard: React.FC = () => {
   const settings = {
@@ -14,6 +14,7 @@ const Dashboard: React.FC = () => {
   };
   return (
     <Container>
+      <Background />
       <Header>
         <img src={logoImg} alt="1st Rocket" />
         <Link to="/">SAIR</Link>
