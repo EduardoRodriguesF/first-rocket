@@ -1,13 +1,11 @@
 .header {
-  align-items: center;
   display: flex;
   justify-content: flex-end;
-  padding: 0;
+  padding: 1%;
 }
 
 .cadastre {
   height: 64px;
-  margin: 10% 15% 0 0;
 }
 
 .centerBuddy {
@@ -187,4 +185,90 @@
 
 .comece {
   margin: 30% 0;
+}
+
+@media screen and (max-width: 800px) {
+
+  .header {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    padding: 1%;
+  }
+
+  .cadastre {
+    margin: 3% 0;
+  }
+
+  .title {
+    font: 900 6.5vw/7vw Poppins;
+  }
+
+  .subtitle {
+    width: 90%;
+    font: bold 4vw/4vw Muli;
+    margin: 1% 0 2%;
+  }
+
+  .input {
+    width: 90%;
+    margin-top: 2%;
+    padding: 3%;
+  }
+
+  .login {
+    margin: 8% 0;
+  }
+
+  .prepare {
+    font: normal normal bold 5vw/6vw Poppins;
+    margin-top: 7%;
+  }
+
+  .block {
+    flex-direction: column;
+  }
+
+  .plataformaInterativa {
+    width: 80%;
+    height: 250px;
+  }
+  
+  .plataformaInterativaTitle {
+    font: normal normal 800 7vw/10vw Poppins;
+  }
+  
+  .plataformaInterativaText {
+    font: normal normal bold 4.4vw/6.4vw Muli;
+  }
+  
+  .aguardeOMatch {
+    width: 80%;
+    height: 250px;
+  }
+  
+  .aguardeOMatchTitle {
+    font: normal normal 800 7vw/10vw Poppins;
+  }
+  
+  .aguardeOMatchText {
+    font: normal normal bold 4.4vw/6.4vw Muli;
+  }
+  
+  .mentorias {
+    width: 80%;
+    height: 250px;
+  }
+  
+  .mentoriasTitle {
+    font: normal normal 800 7vw/10vw Poppins;
+  }
+  
+  .mentoriasText {
+    font: normal normal bold 4.4vw/6.4vw Muli;
+  }
+
+  .comece {
+    margin: 10% 0;
+  }
 }

@@ -9,7 +9,7 @@ export default function Home() {
       <div>
         <div className="header">
           <Link to="/register">
-            <Button className="cadastre">CADASTRE-SE</Button>
+            <Button className="cadastre button">CADASTRE-SE</Button>
           </Link>
         </div>
         <div className="centerBuddy">
@@ -30,7 +30,7 @@ export default function Home() {
           <input placeholder="E-mail" className="input" />
           <input placeholder="Senha" className="input" />
           <Link to="/login">
-            <Button className="login">LOGIN</Button>
+            <Button className="login button">LOGIN</Button>
           </Link>
         </div>
       </div>
@@ -62,7 +62,7 @@ export default function Home() {
           </div>
         </div>
         <Link to="/register">
-          <Button className="comece">COMECE JÁ!</Button>
+          <Button className="comece button">COMECE JÁ!</Button>
         </Link>
       </div>
     </div>
