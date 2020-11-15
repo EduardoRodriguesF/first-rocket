@@ -45,8 +45,9 @@ export const Header = styled.header`
 
 export const Content = styled.div`
   width: 100%;
+  margin-top: 40px;
 
-  > h2 {
+  h2 {
     color: #a440fc;
   }
 `;
@@ -56,8 +57,30 @@ export const Slider = styled.div`
   overflow: auto;
   padding: 20px 0;
 
+  a + a {
+    margin-left: 82px;
+  }
+
   @media (max-width: 800px) {
     flex-direction: column;
+    a {
+      min-width: 300px;
+      height: 180px;
+    }
+
+    div.thumb {
+      display: none !important;
+    }
+
+    div {
+      width: 100% !important;
+      margin-left: 0;
+    }
+
+    a + a {
+      margin-left: 0;
+      margin-top: 24px;
+    }
   }
 
   /* width */
@@ -80,6 +103,39 @@ export const Slider = styled.div`
   /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
     background: ${shade(0.05, '#01f0b1')};
+  }
+`;
+
+export const Mentoring = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 82px;
+  width: 100%;
+
+  .status {
+    margin-top: 24px;
+    width: 50%;
+    min-width: 300px;
+    text-align: center;
+    padding: 40px 0;
+    font-size: 30px;
+    font-weight: 800;
+    color: #fff;
+    background: #a440fc;
+    border-radius: 11px;
+  }
+
+  .lock {
+    margin-top: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    height: 64px;
+    color: #fff;
+    background: #a440fc;
+    border-radius: 50%;
   }
 `;
 
