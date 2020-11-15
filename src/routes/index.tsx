@@ -5,7 +5,8 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 
 import Home from '../pages/Home/index';
 import Register from '../pages/Register';
-
+import Dashboard from '../pages/Dashboard';
+        
 import { isAuthenticated } from '../services/auth';
 
 const PrivateRoute = ({ component: Component, ...rest }) => (
