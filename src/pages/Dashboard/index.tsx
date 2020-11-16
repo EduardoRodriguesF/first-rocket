@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { FiUnlock, FiLock } from 'react-icons/fi';
+
+import api from '../../services/api';
 
 import {
   Container,
@@ -17,7 +19,16 @@ import ScheduleCard from '../../components/ScheduleCard';
 
 import logoImg from '../../assets/logo.svg';
 
+interface Mentorings {
+  idMentor: number;
+  idMentorado: number;
+  dataEHora: string;
+  link: string | null;
+}
+
 const Dashboard: React.FC = () => {
+  const [mentoring, setMentoring] = useState<Mentorings[]>([]);
+
   const courses = [
     {
       title: 'Como Planejar o seu Negócio',
@@ -50,6 +61,18 @@ const Dashboard: React.FC = () => {
         'https://www.sebrae.com.br/sites/PortalSebrae/cursosonline/como-validar-seu-modelo-de-negocio,93b0b8a6a28bb610VgnVCM1000004c00210aRCRD',
     },
   ];
+
+  const getMentoring = useCallback(async () => {
+    await api.get('mentorias').then(response => {
+      setMentoring(response.data);
+      console.log(response.data);
+    });
+  }, []);
+
+  useEffect(() => {
+    getMentoring();
+    console.log(mentoring);
+  }, []);
 
   return (
     <Container>
@@ -88,6 +111,7 @@ const Dashboard: React.FC = () => {
             <ScheduleCard name="Amanda Zanatta" time="12/12 às 16h" />
             <ScheduleCard name="Lucca Dias" time="12/12 às 16h" />
             <ScheduleCard name="Amanda Zanatta" time="12/12 às 16h" />
+            <ScheduleCard name="Marcela Oliveira" time="14:00" />
           </div>
         </Mentoring>
       </Content>
