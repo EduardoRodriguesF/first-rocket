@@ -131,5 +131,12 @@ export const Content = styled.div`
         border-radius: 50%;
       }
     }
+    .time.busy {
+      opacity: 0.5;
+
+      button {
+        display: none;
+      }
+    }
   }
 `;

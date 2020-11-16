@@ -1,5 +1,6 @@
+/* eslint-disable consistent-return */
 import React, { useState, useEffect, useCallback } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { FiUser } from 'react-icons/fi';
 import { GoPlus } from 'react-icons/go';
 
@@ -17,6 +18,7 @@ interface Mentors {
 }
 
 const Mentorias: React.FC = () => {
+  const history = useHistory();
   const [mentors, setMentors] = useState<Mentors[]>([]);
 
   // Variável para testes
@@ -53,6 +55,17 @@ const Mentorias: React.FC = () => {
     getMentors();
   }, []);
 
+  const handleNewMentoring = async (mentorId: number, time: string) => {
+    await api.post('mentorias', {
+      idMentor: Number(mentorId),
+      idMentorado: 1,
+      dataEHora: time,
+      link: null,
+    });
+
+    history.push('/dashboard');
+  };
+
   return (
     <Container>
       <Header>
@@ -76,7 +89,11 @@ const Mentorias: React.FC = () => {
               {mentor.horarios.split(',').map(time => (
                 <div className="time">
                   <p>{time}</p>
-                  <button type="button">
+                  <button
+                    onClick={() => handleNewMentoring(mentor.id, time)}
+                    data-hour={time}
+                    type="button"
+                  >
                     <GoPlus />
                   </button>
                 </div>
